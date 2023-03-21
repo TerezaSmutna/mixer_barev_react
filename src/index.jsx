@@ -1,43 +1,18 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
+import ColorSlider from './ColorSlider/index.jsx';
 
 const App = () => {
   return (
-    <div class="color-panel">
+    <div className="color-panel">
       <h1>Mixér barev</h1>
-      <div class="sliders">
-        <label for="red">Červená</label>
-        <input
-          type="range"
-          class="slider slider--red"
-          id="redSlider"
-          min="0"
-          max="255"
-          value="0"
-        />
-
-        <label for="green">Zelená</label>
-        <input
-          type="range"
-          class="slider slider--green"
-          id="greenSlider"
-          min="0"
-          max="255"
-          value="0"
-        />
-
-        <label for="blue">Modrá</label>
-        <input
-          type="range"
-          class="slider slider--blue"
-          id="blueSlider"
-          min="0"
-          max="255"
-          value="0"
-        />
+      <div className="sliders">
+        <ColorSlider baseColor="red" colorName="Červená"/>
+        <ColorSlider baseColor="green" colorName="Zelená"/>
+        <ColorSlider baseColor="blue" colorName="Modrá"/>
       </div>
-      <div class="color-box" id="color-box"></div>
+      <div className="color-box" id="color-box"></div>
     </div>
   );
 };
